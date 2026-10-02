@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0B0F17;
+    --foreground: #F8FAFC;
+    --card: #121826;
+    --card-foreground: #F8FAFC;
+    --popover: #121826;
+    --popover-foreground: #F8FAFC;
+    --primary: #D97706;
+    --primary-foreground: #FFFFFF;
+    --secondary: #1E2638;
+    --secondary-foreground: #F8FAFC;
+    --muted: #1E2638;
+    --muted-foreground: #94A3B8;
+    --accent: #F59E0B;
+    --accent-foreground: #0B0F17;
+    --destructive: #EF4444;
+    --destructive-foreground: #FFFFFF;
+    --border: #232D42;
+    --input: #1F293D;
+    --ring: #D97706;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F17;
+}
+::-webkit-scrollbar-thumb {
+  background: #232D42;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glass & Glow utilities */
+.gold-glow-hover {
+  transition: all 0.2s ease-in-out;
+}
+.gold-glow-hover:hover {
+  box-shadow: 0 0 20px -3px rgba(217, 119, 6, 0.4);
+}
+
+.border-subtle {
+  border-color: #232D42;
+}
