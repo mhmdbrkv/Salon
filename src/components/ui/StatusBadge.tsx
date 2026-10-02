@@ -22,42 +22,42 @@ export const statusConfig: Record<
   { label: string; bg: string; text: string; border: string; icon: React.ElementType }
 > = {
   BOOKED: {
-    label: "Booked",
+    label: "محجوز",
     bg: "bg-sky-950/60",
     text: "text-sky-400",
     border: "border-sky-800/60",
     icon: Clock,
   },
   CHECKED_IN: {
-    label: "Checked In",
+    label: "تم الوصول",
     bg: "bg-indigo-950/60",
     text: "text-indigo-400",
     border: "border-indigo-800/60",
     icon: UserCheck,
   },
   IN_SERVICE: {
-    label: "In Service",
+    label: "قيد الخدمة",
     bg: "bg-amber-950/60",
     text: "text-amber-400",
     border: "border-amber-700/60",
     icon: Scissors,
   },
   COMPLETED: {
-    label: "Completed",
+    label: "مكتمل",
     bg: "bg-emerald-950/60",
     text: "text-emerald-400",
     border: "border-emerald-800/60",
     icon: CheckCircle2,
   },
   CANCELLED: {
-    label: "Cancelled",
+    label: "ملغي",
     bg: "bg-rose-950/50",
     text: "text-rose-400",
     border: "border-rose-900/50",
     icon: XCircle,
   },
   NO_SHOW: {
-    label: "No Show",
+    label: "تغيب",
     bg: "bg-slate-900/80",
     text: "text-slate-400",
     border: "border-slate-800",

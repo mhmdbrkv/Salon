@@ -62,12 +62,12 @@ export default function DashboardOverviewPage() {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <h1 className="text-xl sm:text-2xl font-bold text-white font-display">
-              Good day, Baraka Team
+              يوم سعيد، فريق بركة
             </h1>
             <span className="text-lg">✂️</span>
           </div>
           <p className="text-xs sm:text-sm text-slate-400">
-            Here is your live floor status and daily schedule for {salon.name}.
+            هذه هي حالة الطابق المباشرة والجدول اليومي لـ {salon.name}.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -76,7 +76,7 @@ export default function DashboardOverviewPage() {
             target="_blank"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-brand-500 hover:bg-brand-400 text-black shadow-lg shadow-brand-500/20 transition-all"
           >
-            <span>Customer Booking Link</span>
+            <span>رابط حجز العملاء</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -87,7 +87,7 @@ export default function DashboardOverviewPage() {
         {/* KPI 1: Today's Revenue */}
         <div className="bg-[#121826] border border-[#232D42] rounded-xl p-4 sm:p-5 relative overflow-hidden group hover:border-brand-500/50 transition-colors">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-medium text-slate-400">Today&apos;s Revenue</span>
+            <span className="text-xs font-medium text-slate-400">إيرادات اليوم</span>
             <div className="w-8 h-8 rounded-lg bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-emerald-400">
               <TrendingUp className="w-4 h-4" />
             </div>
@@ -97,7 +97,7 @@ export default function DashboardOverviewPage() {
               {formatEGP(kpis.todayRevenue)}
             </span>
             <p className="text-[11px] text-emerald-400 mt-1 flex items-center gap-1 font-medium">
-              <span>● Completed services</span>
+              <span>● خدمات مكتملة</span>
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function DashboardOverviewPage() {
         {/* KPI 2: Total Appointments Today */}
         <div className="bg-[#121826] border border-[#232D42] rounded-xl p-4 sm:p-5 relative overflow-hidden group hover:border-brand-500/50 transition-colors">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-medium text-slate-400">Appointments Today</span>
+            <span className="text-xs font-medium text-slate-400">حجوزات اليوم</span>
             <div className="w-8 h-8 rounded-lg bg-sky-950/80 border border-sky-800/60 flex items-center justify-center text-sky-400">
               <CalendarCheck className="w-4 h-4" />
             </div>
@@ -115,7 +115,7 @@ export default function DashboardOverviewPage() {
               {kpis.todayAppointmentsCount}
             </span>
             <p className="text-[11px] text-slate-400 mt-1">
-              {kpis.todayUpcomingCount} upcoming / queued
+              {kpis.todayUpcomingCount} قادمة / في الطابور
             </p>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function DashboardOverviewPage() {
         {/* KPI 3: Completed */}
         <div className="bg-[#121826] border border-[#232D42] rounded-xl p-4 sm:p-5 relative overflow-hidden group hover:border-brand-500/50 transition-colors">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-medium text-slate-400">Completed</span>
+            <span className="text-xs font-medium text-slate-400">مكتمل</span>
             <div className="w-8 h-8 rounded-lg bg-indigo-950/80 border border-indigo-800/60 flex items-center justify-center text-indigo-400">
               <CheckCircle2 className="w-4 h-4" />
             </div>
@@ -136,7 +136,7 @@ export default function DashboardOverviewPage() {
               {kpis.todayAppointmentsCount > 0
                 ? Math.round((kpis.todayCompletedCount / kpis.todayAppointmentsCount) * 100)
                 : 0}
-              % completion rate
+              % معدل الإنجاز
             </p>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function DashboardOverviewPage() {
         {/* KPI 4: No Shows */}
         <div className="bg-[#121826] border border-[#232D42] rounded-xl p-4 sm:p-5 relative overflow-hidden group hover:border-brand-500/50 transition-colors">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-medium text-slate-400">No Shows</span>
+            <span className="text-xs font-medium text-slate-400">التغيبات</span>
             <div className="w-8 h-8 rounded-lg bg-rose-950/80 border border-rose-900/60 flex items-center justify-center text-rose-400">
               <UserX className="w-4 h-4" />
             </div>
@@ -153,7 +153,7 @@ export default function DashboardOverviewPage() {
             <span className="text-xl sm:text-2xl font-bold text-white font-display">
               {kpis.todayNoShowsCount}
             </span>
-            <p className="text-[11px] text-rose-400/80 mt-1">Missed visits today</p>
+            <p className="text-[11px] text-rose-400/80 mt-1">زيارات فائتة اليوم</p>
           </div>
         </div>
       </div>
@@ -164,14 +164,14 @@ export default function DashboardOverviewPage() {
           <div className="flex items-center gap-2">
             <Scissors className="w-4 h-4 text-brand-400" />
             <h2 className="text-sm font-bold text-white uppercase tracking-wider">
-              Barber Roster & Current Floor Status
+              جدول الحلاقين وحالة الطابق
             </h2>
           </div>
           <Link
             href="/dashboard/barbers"
             className="text-xs text-brand-400 hover:text-brand-300 font-medium flex items-center gap-1"
           >
-            <span>Manage Barbers</span>
+            <span>إدارة الحلاقين</span>
             <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
@@ -232,35 +232,35 @@ export default function DashboardOverviewPage() {
 
                 <div className="space-y-1.5 text-[11px] pt-1 border-t border-[#232D42]">
                   <div className="flex justify-between text-slate-400">
-                    <span>Shift:</span>
+                    <span>الدوام:</span>
                     <span className="text-slate-200 font-mono">
                       {barber.workingHours.start} - {barber.workingHours.end}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Current state:</span>
+                    <span className="text-slate-400">الحالة:</span>
                     {currentApt ? (
                       <span className="text-amber-400 font-medium flex items-center gap-1">
-                        <Scissors className="w-3 h-3 animate-spin" /> In Service
+                        <Scissors className="w-3 h-3 animate-spin" /> قيد الخدمة
                       </span>
                     ) : (
-                      <span className="text-emerald-400 font-medium">Available</span>
+                      <span className="text-emerald-400 font-medium">متاح</span>
                     )}
                   </div>
                   {currentApt && (
                     <p className="text-[10px] text-amber-300/80 truncate">
-                      Cutting: {currentApt.customerName} ({currentApt.serviceName})
+                      يعمل الآن: {currentApt.customerName} ({currentApt.serviceName})
                     </p>
                   )}
                   {nextApt && !currentApt && (
                     <p className="text-[10px] text-slate-400 truncate">
-                      Next: {nextApt.startTime} ({nextApt.customerName})
+                      التالي: {nextApt.startTime} ({nextApt.customerName})
                     </p>
                   )}
                   <div className="flex justify-between text-[10px] text-slate-500 pt-0.5">
-                    <span>Today&apos;s load:</span>
+                    <span>حمل اليوم:</span>
                     <span className="font-semibold text-slate-300">
-                      {todayBarberApts.length} bookings
+                      {todayBarberApts.length} حجز
                     </span>
                   </div>
                 </div>

@@ -61,9 +61,9 @@ export default function SettingsPage() {
     <div className="space-y-6 max-w-4xl">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-white font-display">Salon Settings</h1>
+        <h1 className="text-2xl font-bold text-white font-display">إعدادات الصالون</h1>
         <p className="text-xs text-slate-400">
-          Manage your barbershop profile, business hours, and customer booking link
+          إدارة ملف الصالون، أوقات العمل، ورابط الحجز الخاص بالعملاء
         </p>
       </div>
 

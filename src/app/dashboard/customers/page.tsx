@@ -47,9 +47,9 @@ export default function CustomersPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white font-display">Customer Directory</h1>
+          <h1 className="text-2xl font-bold text-white font-display">دليل العملاء</h1>
           <p className="text-xs text-slate-400">
-            Track customer loyalty, visit frequency, and historical bookings
+            متابعة الولاء، عدد الزيارات، وسجل الحجوزات السابقة
           </p>
         </div>
 

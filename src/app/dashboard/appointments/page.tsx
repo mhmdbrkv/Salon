@@ -69,9 +69,9 @@ export default function AppointmentsPage() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white font-display">Appointments</h1>
+          <h1 className="text-2xl font-bold text-white font-display">المواعيد</h1>
           <p className="text-xs text-slate-400">
-            View, filter, schedule, and track customer appointments in real time
+            عرض وتصنيف ومتابعة حجوزات العملاء في الوقت الحقيقي
           </p>
         </div>
         <button
@@ -79,7 +79,7 @@ export default function AppointmentsPage() {
           className="inline-flex items-center gap-2 px-4 py-2 bg-brand-500 hover:bg-brand-400 text-black font-semibold text-xs rounded-xl shadow-lg shadow-brand-500/20 transition-all self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
-          <span>New Appointment</span>
+          <span>حجز جديد</span>
         </button>
       </div>
 
@@ -110,13 +110,13 @@ export default function AppointmentsPage() {
                   : "bg-[#161D2C] text-slate-300 hover:bg-[#1E2638] border border-[#232D42]"
               }`}
             >
-              All Dates
+              كل التواريخ
             </button>
           </div>
 
           {/* Custom Date Input */}
           <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-400 hidden sm:inline">Pick Date:</span>
+            <span className="text-xs text-slate-400 hidden sm:inline">اختر التاريخ:</span>
             <div className="relative">
               <input
                 type="date"
@@ -149,10 +149,10 @@ export default function AppointmentsPage() {
               onChange={(e) => setSelectedBarber(e.target.value)}
               className="w-full bg-[#161D2C] border border-[#232D42] rounded-lg px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-brand-500"
             >
-              <option value="ALL">All Barbers</option>
+              <option value="ALL">كل الحلاقين</option>
               {barbers.map((b) => (
                 <option key={b.id} value={b.id}>
-                  Barber: {b.name}
+                  الحلاق: {b.name}
                 </option>
               ))}
             </select>
@@ -165,13 +165,13 @@ export default function AppointmentsPage() {
               onChange={(e) => setSelectedStatus(e.target.value)}
               className="w-full bg-[#161D2C] border border-[#232D42] rounded-lg px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-brand-500"
             >
-              <option value="ALL">All Statuses</option>
-              <option value="BOOKED">Status: Booked</option>
-              <option value="CHECKED_IN">Status: Checked In</option>
-              <option value="IN_SERVICE">Status: In Service</option>
-              <option value="COMPLETED">Status: Completed</option>
-              <option value="NO_SHOW">Status: No Show</option>
-              <option value="CANCELLED">Status: Cancelled</option>
+              <option value="ALL">كل الحالات</option>
+              <option value="BOOKED">الحالة: محجوز</option>
+              <option value="CHECKED_IN">الحالة: تم الوصول</option>
+              <option value="IN_SERVICE">الحالة: قيد الخدمة</option>
+              <option value="COMPLETED">الحالة: مكتمل</option>
+              <option value="NO_SHOW">الحالة: تغيب</option>
+              <option value="CANCELLED">الحالة: ملغي</option>
             </select>
           </div>
         </div>
@@ -252,12 +252,12 @@ export default function AppointmentsPage() {
                         }
                         className="bg-[#161D2C] border border-[#232D42] text-xs text-slate-200 rounded-lg px-2 py-1 focus:outline-none focus:border-brand-500 font-medium"
                       >
-                        <option value="BOOKED">Booked</option>
-                        <option value="CHECKED_IN">Checked In</option>
-                        <option value="IN_SERVICE">In Service</option>
-                        <option value="COMPLETED">Completed</option>
-                        <option value="NO_SHOW">No Show</option>
-                        <option value="CANCELLED">Cancelled</option>
+                        <option value="BOOKED">محجوز</option>
+                        <option value="CHECKED_IN">تم الوصول</option>
+                        <option value="IN_SERVICE">قيد الخدمة</option>
+                        <option value="COMPLETED">مكتمل</option>
+                        <option value="NO_SHOW">تغيب</option>
+                        <option value="CANCELLED">ملغي</option>
                       </select>
                     </td>
 

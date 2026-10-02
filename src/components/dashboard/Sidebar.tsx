@@ -23,35 +23,35 @@ export const Sidebar: React.FC = () => {
 
   const navItems = [
     {
-      name: "Overview",
+      name: "نظرة عامة",
       href: "/dashboard",
       icon: LayoutDashboard,
       exact: true,
     },
     {
-      name: "Appointments",
+      name: "المواعيد",
       href: "/dashboard/appointments",
       icon: CalendarDays,
       badge: appointments.filter((a) => a.date === new Date().toISOString().split("T")[0] && a.status === "BOOKED").length || undefined,
     },
     {
-      name: "Barbers",
+      name: "الحلاقون",
       href: "/dashboard/barbers",
       icon: Scissors,
       badge: barbers.filter((b) => b.isActive).length,
     },
     {
-      name: "Services",
+      name: "الخدمات",
       href: "/dashboard/services",
       icon: Sparkles,
     },
     {
-      name: "Customers",
+      name: "العملاء",
       href: "/dashboard/customers",
       icon: Users,
     },
     {
-      name: "Settings",
+      name: "الإعدادات",
       href: "/dashboard/settings",
       icon: Settings,
     },
@@ -70,7 +70,7 @@ export const Sidebar: React.FC = () => {
               {salon.name}
             </h1>
             <p className="text-xs text-brand-400 font-medium tracking-wider uppercase">
-              Management Portal
+              بوابة الإدارة
             </p>
           </div>
         </Link>
@@ -79,7 +79,7 @@ export const Sidebar: React.FC = () => {
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-1.5 overflow-y-auto">
         <div className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-          Main Menu
+          القائمة الرئيسية
         </div>
         {navItems.map((item) => {
           const isActive = item.exact
@@ -135,26 +135,26 @@ export const Sidebar: React.FC = () => {
         >
           <span className="flex items-center gap-2">
             <ExternalLink className="w-3.5 h-3.5" />
-            <span>Open Booking Page</span>
+            <span>فتح صفحة الحجز</span>
           </span>
           <span className="text-[10px] bg-black/20 px-1.5 py-0.5 rounded font-mono">
-            Client
+            عميل
           </span>
         </Link>
 
         <div className="flex items-center justify-between pt-1 text-xs text-slate-500 px-1">
-          <span className="text-[11px]">MVP Demo Mode</span>
+          <span className="text-[11px]">وضع العرض التجريبي</span>
           <button
             onClick={() => {
-              if (confirm("Reset demo data to initial defaults?")) {
+              if (confirm("هل تريد إعادة ضبط بيانات العرض إلى إعدادات البداية؟")) {
                 resetToDefaultData();
               }
             }}
-            title="Reset to fresh mock state"
+            title="إعادة ضبط العرض"
             className="flex items-center gap-1 text-[11px] text-slate-400 hover:text-brand-400 transition-colors"
           >
             <RotateCcw className="w-3 h-3" />
-            <span>Reset Demo</span>
+            <span>إعادة ضبط</span>
           </button>
         </div>
       </div>

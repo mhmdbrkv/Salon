@@ -63,7 +63,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ onNewBookingClick }) => {
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-sm text-white">{salon.name}</span>
                 <span className="hidden sm:inline-block text-[11px] px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800/60 font-medium">
-                  Live Salon
+                  صالون مباشر
                 </span>
               </div>
               <p className="text-xs text-slate-400 hidden sm:block">
@@ -90,7 +90,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ onNewBookingClick }) => {
             className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-[#161D2C] hover:bg-[#1E2638] border border-[#232D42] rounded-lg transition-colors"
           >
             <ExternalLink className="w-3.5 h-3.5 text-brand-400" />
-            <span>Booking Page</span>
+            <span>صفحة الحجز</span>
           </Link>
 
           {/* New Appointment / Walk-in Button */}
@@ -100,7 +100,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ onNewBookingClick }) => {
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-black bg-brand-500 hover:bg-brand-400 active:scale-95 rounded-lg shadow-md shadow-brand-600/20 transition-all"
             >
               <Plus className="w-4 h-4 text-black" />
-              <span>New Walk-in</span>
+              <span>حجز جديد</span>
             </button>
           )}
         </div>
@@ -131,12 +131,12 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ onNewBookingClick }) => {
 
             <div className="flex-1 py-4 space-y-1 overflow-y-auto">
               {[
-                { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
-                { name: "Appointments", href: "/dashboard/appointments", icon: CalendarDays },
-                { name: "Barbers", href: "/dashboard/barbers", icon: Scissors },
-                { name: "Services", href: "/dashboard/services", icon: Sparkles },
-                { name: "Customers", href: "/dashboard/customers", icon: Users },
-                { name: "Settings", href: "/dashboard/settings", icon: Settings },
+                { name: "نظرة عامة", href: "/dashboard", icon: LayoutDashboard },
+                { name: "المواعيد", href: "/dashboard/appointments", icon: CalendarDays },
+                { name: "الحلاقون", href: "/dashboard/barbers", icon: Scissors },
+                { name: "الخدمات", href: "/dashboard/services", icon: Sparkles },
+                { name: "العملاء", href: "/dashboard/customers", icon: Users },
+                { name: "الإعدادات", href: "/dashboard/settings", icon: Settings },
               ].map((item) => {
                 const Icon = item.icon;
                 return (
@@ -161,7 +161,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({ onNewBookingClick }) => {
                 className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-brand-500 text-black text-xs font-semibold shadow-md"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span>Open Public Booking Page</span>
+                <span>فتح صفحة الحجز العامة</span>
               </Link>
             </div>
           </div>

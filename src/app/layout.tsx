@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="ar" dir="rtl" className="dark">
       <body className="min-h-screen bg-[#0B0F17] text-slate-100 antialiased selection:bg-brand-500 selection:text-black">
         <SalonProvider>{children}</SalonProvider>
       </body>

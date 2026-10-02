@@ -83,9 +83,9 @@ export default function ServicesManagementPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white font-display">Services Menu</h1>
+          <h1 className="text-2xl font-bold text-white font-display">قائمة الخدمات</h1>
           <p className="text-xs text-slate-400">
-            Configure your grooming offerings, pricing in EGP, and service durations
+            ضبط الخدمات المتاحة، الأسعار بالجنيه، ومواعيد كل خدمة
           </p>
         </div>
         <button
@@ -93,7 +93,7 @@ export default function ServicesManagementPage() {
           className="inline-flex items-center gap-2 px-4 py-2 bg-brand-500 hover:bg-brand-400 text-black font-semibold text-xs rounded-xl shadow-lg shadow-brand-500/20 transition-all self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
-          <span>Add New Service</span>
+          <span>إضافة خدمة جديدة</span>
         </button>
       </div>
 

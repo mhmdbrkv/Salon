@@ -118,9 +118,9 @@ export default function BarbersManagementPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white font-display">Barbers & Stylists</h1>
+          <h1 className="text-2xl font-bold text-white font-display">الحلاقون وذوو المهن</h1>
           <p className="text-xs text-slate-400">
-            Manage your salon staff, shift hours, assigned skills, and live availability
+            إدارة فريق الصالون، أوقات الدوام، المهارات المخصصة، والتوفر المباشر
           </p>
         </div>
         <button
@@ -128,7 +128,7 @@ export default function BarbersManagementPage() {
           className="inline-flex items-center gap-2 px-4 py-2 bg-brand-500 hover:bg-brand-400 text-black font-semibold text-xs rounded-xl shadow-lg shadow-brand-500/20 transition-all self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
-          <span>Add New Barber</span>
+          <span>إضافة حلاق جديد</span>
         </button>
       </div>
 

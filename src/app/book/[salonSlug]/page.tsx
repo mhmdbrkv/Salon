@@ -7,7 +7,6 @@ import { useSalon } from "@/context/SalonContext";
 import { generateAvailableSlots, calculateEndTime, findAvailableBarberForSlot } from "@/lib/scheduling";
 import { formatEGP, formatDatePretty, getTodayDateString, getRelativeDateString } from "@/lib/utils";
 import { Service, Barber, Appointment } from "@/types";
-import confetti from "canvas-confetti";
 import {
   Scissors,
   User,
@@ -162,11 +161,13 @@ export default function CustomerBookingPage() {
 
     // Fire celebratory confetti
     try {
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { y: 0.6 },
-        colors: ["#D97706", "#F59E0B", "#FBBF24", "#10B981"],
+      import("canvas-confetti").then((module) => {
+        module.default({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ["#D97706", "#F59E0B", "#FBBF24", "#10B981"],
+        });
       });
     } catch (e) {
       console.log(e);
@@ -199,7 +200,7 @@ export default function CustomerBookingPage() {
             href="/dashboard"
             className="text-xs text-brand-400 hover:text-brand-300 font-medium px-2.5 py-1 rounded-lg bg-[#161D2C] border border-[#232D42]"
           >
-            Owner Portal →
+            بوابة المالك →
           </Link>
         </div>
       </header>
@@ -212,19 +213,19 @@ export default function CustomerBookingPage() {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-xs px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 font-semibold">
-                  Online Booking
+                  حجز إلكتروني
                 </span>
                 <div className="flex items-center gap-1 text-xs text-amber-400 font-bold">
                   <Star className="w-3.5 h-3.5 fill-amber-400" />
                   <span>{salon.rating}</span>
-                  <span className="text-slate-400 font-normal">({salon.reviewCount} reviews)</span>
+                  <span className="text-slate-400 font-normal">({salon.reviewCount} تقييم)</span>
                 </div>
               </div>
               <h1 className="text-xl sm:text-2xl font-bold text-white font-display">
-                Book Your Grooming Session
+                احجز جلستك للتنظيف والقص
               </h1>
               <p className="text-xs text-slate-300 mt-1">
-                {salon.tagline} • Open {salon.openTime} – {salon.closeTime}
+                {salon.tagline} • مفتوح من {salon.openTime} إلى {salon.closeTime}
               </p>
             </div>
           </div>
@@ -233,10 +234,10 @@ export default function CustomerBookingPage() {
           {currentStep < 5 && (
             <div className="mt-6 pt-4 border-t border-[#232D42]/80">
               <div className="flex items-center justify-between text-[11px] font-semibold text-slate-400 mb-2">
-                <span className={currentStep >= 1 ? "text-brand-400" : ""}>1. Service</span>
-                <span className={currentStep >= 2 ? "text-brand-400" : ""}>2. Barber</span>
-                <span className={currentStep >= 3 ? "text-brand-400" : ""}>3. Date & Time</span>
-                <span className={currentStep >= 4 ? "text-brand-400" : ""}>4. Your Details</span>
+                <span className={currentStep >= 1 ? "text-brand-400" : ""}>1. الخدمة</span>
+                <span className={currentStep >= 2 ? "text-brand-400" : ""}>2. الحلاق</span>
+                <span className={currentStep >= 3 ? "text-brand-400" : ""}>3. التاريخ والوقت</span>
+                <span className={currentStep >= 4 ? "text-brand-400" : ""}>4. بياناتك</span>
               </div>
               <div className="h-1.5 w-full bg-[#0E131E] rounded-full overflow-hidden">
                 <div
@@ -254,9 +255,9 @@ export default function CustomerBookingPage() {
             <div className="flex items-center justify-between">
               <h2 className="text-base font-bold text-white font-display flex items-center gap-2">
                 <Scissors className="w-4 h-4 text-brand-400" />
-                <span>Select Service</span>
+                <span>اختر الخدمة</span>
               </h2>
-              <span className="text-xs text-slate-400">Step 1 of 4</span>
+              <span className="text-xs text-slate-400">الخطوة 1 من 4</span>
             </div>
 
             <div className="space-y-3">
@@ -309,7 +310,7 @@ export default function CustomerBookingPage() {
                 onClick={() => setCurrentStep(2)}
                 className="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-black font-bold text-sm shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2"
               >
-                <span>Continue to Barber</span>
+                <span>متابعة إلى الحلاق</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -322,9 +323,9 @@ export default function CustomerBookingPage() {
             <div className="flex items-center justify-between">
               <h2 className="text-base font-bold text-white font-display flex items-center gap-2">
                 <User className="w-4 h-4 text-brand-400" />
-                <span>Choose Barber / Stylist</span>
+                <span>اختر الحلاق / المصفف</span>
               </h2>
-              <span className="text-xs text-slate-400">Step 2 of 4</span>
+              <span className="text-xs text-slate-400">الخطوة 2 من 4</span>
             </div>
 
             {/* Any Available Barber Option */}
@@ -341,9 +342,9 @@ export default function CustomerBookingPage() {
                   <Sparkles className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-sm">Any Available Barber</h3>
+                  <h3 className="font-bold text-white text-sm">أي حلاق متاح</h3>
                   <p className="text-xs text-slate-400">
-                    Get the earliest open slot with any of our master barbers
+                    احصل على أول موعد متاح مع أي من الحلاقين الخبراء
                   </p>
                 </div>
               </div>
@@ -407,13 +408,13 @@ export default function CustomerBookingPage() {
                 className="px-4 py-2.5 rounded-xl bg-[#161D2C] hover:bg-[#1E2638] text-slate-300 text-xs font-semibold flex items-center gap-1"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>Back</span>
+                <span>رجوع</span>
               </button>
               <button
                 onClick={() => setCurrentStep(3)}
                 className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-black font-bold text-xs shadow-lg shadow-brand-500/20 flex items-center justify-center gap-1"
               >
-                <span>Select Date & Time</span>
+                <span>اختر التاريخ والوقت</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -426,15 +427,15 @@ export default function CustomerBookingPage() {
             <div className="flex items-center justify-between">
               <h2 className="text-base font-bold text-white font-display flex items-center gap-2">
                 <CalendarIcon className="w-4 h-4 text-brand-400" />
-                <span>Select Date & Time Slot</span>
+                <span>اختر التاريخ ووقت الموعد</span>
               </h2>
-              <span className="text-xs text-slate-400">Step 3 of 4</span>
+              <span className="text-xs text-slate-400">الخطوة 3 من 4</span>
             </div>
 
             {/* Date Slider */}
             <div>
               <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Available Dates (Next 7 Days)
+                التواريخ المتاحة (أسبوع كامل)
               </label>
               <div className="grid grid-cols-4 sm:grid-cols-7 gap-2">
                 {next7Days.map((d) => {
@@ -469,11 +470,11 @@ export default function CustomerBookingPage() {
               <div className="flex items-center justify-between">
                 <label className="text-xs font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-brand-400" />
-                  <span>Available Time Slots ({selectedService?.duration} mins)</span>
+                  <span>الأوقات المتاحة ({selectedService?.duration} دقيقة)</span>
                 </label>
                 {selectedTimeSlot && (
                   <span className="text-xs text-brand-400 font-bold">
-                    Selected: {selectedTimeSlot} (ends at{" "}
+                    تم الاختيار: {selectedTimeSlot} (ينتهي في{" "}
                     {selectedService && calculateEndTime(selectedTimeSlot, selectedService.duration)})
                   </span>
                 )}
@@ -582,14 +583,14 @@ export default function CustomerBookingPage() {
                 className="px-4 py-2.5 rounded-xl bg-[#161D2C] hover:bg-[#1E2638] text-slate-300 text-xs font-semibold flex items-center gap-1"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>Back</span>
+                <span>رجوع</span>
               </button>
               <button
                 disabled={!selectedTimeSlot}
                 onClick={() => setCurrentStep(4)}
                 className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-400 disabled:opacity-40 disabled:pointer-events-none text-black font-bold text-xs shadow-lg shadow-brand-500/20 flex items-center justify-center gap-1"
               >
-                <span>Enter Contact Details</span>
+                <span>أدخل بيانات الاتصال</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -602,9 +603,9 @@ export default function CustomerBookingPage() {
             <div className="flex items-center justify-between">
               <h2 className="text-base font-bold text-white font-display flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand-400" />
-                <span>Your Contact Details</span>
+                <span>بيانات الاتصال</span>
               </h2>
-              <span className="text-xs text-slate-400">Step 4 of 4</span>
+              <span className="text-xs text-slate-400">الخطوة 4 من 4</span>
             </div>
 
             {/* Booking Summary Card */}
